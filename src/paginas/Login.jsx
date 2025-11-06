@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navegar = useNavigate();
   const [pswd, setPswd] = useState("");
   const [email, setEmail] = useState("");
 
@@ -9,6 +11,7 @@ export default function Login() {
     //logica de validacion de correo
     if ((pswd == "1234") & (email === "luis@gmail.com")) {
       alert("listo");
+      navegar("/registro");
       token = generateToken();
     } else {
       alert("datos incorrectos");
